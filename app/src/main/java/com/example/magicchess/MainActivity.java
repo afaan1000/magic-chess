@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         init();
+        battle();
     }
 
     public ImageView piecesButton;
@@ -28,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
                 Intent piecesPage = new Intent(MainActivity.this, Pieces.class);
 
                 startActivity(piecesPage);
+
+            }
+        });
+    }
+
+    public Button battle;
+
+    public void battle(){
+        battle = (Button) findViewById(R.id.battleButton);
+        battle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent boardPage = new Intent(MainActivity.this, PlayChess.class);
+
+                startActivity(boardPage);
 
             }
         });

@@ -69,11 +69,11 @@ public class Board {
     }
 
     public Collection<Piece> getBlackPieces(){
-        return this.getBlackPieces();
+        return this.blackPieces;
     }
 
     public Collection<Piece> getWhitePieces(){
-        return this.getWhitePieces();
+        return this.whitePieces;
     }
 
     private Collection<Move> calculateLegalMoves(final Collection<Piece> pieces) {
@@ -172,7 +172,7 @@ public class Board {
         }
 
         public Builder setMoveMaker(final Alliance alliance){
-            this.nextMoveMaker = nextMoveMaker;
+            this.nextMoveMaker = alliance;
             return this;
         }
 
