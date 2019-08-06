@@ -7,6 +7,7 @@
     tools:context=".PlayChess">
 
     <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,9 +76,9 @@
             android:id="@+id/a4"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile"
             app:layout_column="0"
-            app:layout_row="6" />
+            app:layout_row="6"
+            app:srcCompat="@drawable/white_tile" />
 
         <ImageView
             android:id="@+id/b4"
@@ -119,17 +120,17 @@
             android:id="@+id/h4"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile"
             app:layout_column="7"
-            app:layout_row="6" />
+            app:layout_row="6"
+            app:srcCompat="@drawable/black_tile" />
 
         <ImageView
             android:id="@+id/a6"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile"
             app:layout_column="0"
-            app:layout_row="3" />
+            app:layout_row="3"
+            app:srcCompat="@drawable/white_tile" />
 
         <ImageView
             android:id="@+id/b6"
@@ -177,9 +178,9 @@
             android:id="@+id/b7"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile"
             app:layout_column="1"
-            app:layout_row="2" />
+            app:layout_row="2"
+            app:srcCompat="@drawable/white_tile" />
 
         <ImageView
             android:id="@+id/c7"
@@ -221,17 +222,17 @@
             android:id="@+id/a3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile"
             app:layout_column="0"
-            app:layout_row="7" />
+            app:layout_row="7"
+            app:srcCompat="@drawable/black_tile" />
 
         <ImageView
             android:id="@+id/a8"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile"
             app:layout_column="0"
-            app:layout_row="1" />
+            app:layout_row="1"
+            app:srcCompat="@drawable/white_tile" />
 
         <ImageView
             android:id="@+id/b8"
@@ -436,6 +437,7 @@
         android:id="@+id/RelativeLayout01"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        app:layout_constrainedHeight="false"
         tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="162dp">
 
