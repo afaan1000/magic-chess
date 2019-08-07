@@ -9,7 +9,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Display;
 import android.widget.AbsoluteLayout;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -97,7 +99,7 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((ImageView) findViewById(R.id.h1));
 
 
-        ImageView imageView = new ImageView(this);
+        ImageView imageView =  new ImageView(this);
         imageView.setImageResource(R.drawable.rook);
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.RelativeLayout01);
 
@@ -106,17 +108,37 @@ public class PlayChess extends AppCompatActivity {
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
 
-        int tileX = (int) tiles.get(0).getX();
-        int tileY = (int) tiles.get(0).getY();
-        System.out.println(tileX);
+        float tileX = relativeLayout.getX();
+        float tileY = relativeLayout.getY();
+        System.out.println("difisdjsidj" + tileX);
 
-        relativeLayout.setX(100);
-        relativeLayout.setY(100);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenWidth = size.x;
+        int screenHeight = size.y;
+
+        //GridLayout gridLayout = (GridLayout) findViewById(R.id.gridLayout);
+        /*GridLayout.LayoutParams layoutParams2 = new GridLayout.LayoutParams();
+        int gridWidth = gridLayout.getWidth();
+        int gridHeight = gridLayout.getHeight();*/
+
+        /*int tileWidth = 0;
+        int tileHeight = 0;
+        for (int i = 0; i<64; i++){
+            tileWidth = (screenWidth-gridWidth) + 50*(i%8)+25;
+            tileHeight = (screenHeight/2 - gridHeight/2) + 50*(i/8) + 25;
+        }*/
+
+        relativeLayout.setX(tileX);
+        relativeLayout.setY(tileY);
+
 
         relativeLayout.addView(imageView, layoutParams);
-        imageView.setLayoutParams(layoutParams);
 
-        RelativeLayout gridLayout = (RelativeLayout) findViewById(R.id.gridLayout);
+
+
 
 
     }
