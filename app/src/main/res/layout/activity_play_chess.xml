@@ -7,7 +7,6 @@
     tools:context=".PlayChess">
 
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -16,442 +15,545 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:addStatesFromChildren="true"
-        android:clipChildren="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/b5"
+        <RelativeLayout
+            android:id="@+id/relativeLayout00"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout01"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout02"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout03"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout04"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout05"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout06"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout07"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout09"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="1"
-            app:layout_row="5"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="1">
 
-        <ImageView
-            android:id="@+id/c5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout10"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/d5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout11"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/e5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout12"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/f5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout13"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/g5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout14"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/h5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout15"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/a5"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout08"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="#FBCD56"
             app:layout_column="0"
-            app:layout_row="5"
-            app:srcCompat="@drawable/black_tile" />
+            app:layout_row="1">
 
-        <ImageView
-            android:id="@+id/a4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout16"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="0"
-            app:layout_row="6"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="2">
 
-        <ImageView
-            android:id="@+id/b4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout17"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/c4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout18"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/d4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout19"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/e4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout20"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/f4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout21"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/g4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout22"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/h4"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout23"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:layout_column="7"
-            app:layout_row="6"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/a6"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout25"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:layout_column="0"
-            app:layout_row="3"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/b6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/c6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/d6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/e6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/f6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/g6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/h6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/b7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="1"
-            app:layout_row="2"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="3">
 
-        <ImageView
-            android:id="@+id/c7"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout26"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/d7"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout27"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/e7"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout28"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/f7"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout29"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/g7"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout30"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/h7"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout31"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/a3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout24"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="#FBCD56"
             app:layout_column="0"
-            app:layout_row="7"
-            app:srcCompat="@drawable/black_tile" />
+            app:layout_row="3">
 
-        <ImageView
-            android:id="@+id/a8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout32"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="0"
-            app:layout_row="1"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="4">
 
-        <ImageView
-            android:id="@+id/b8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout33"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/c8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout34"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/d8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout35"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/e8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout36"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/f8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout37"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/g8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout38"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/h8"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout39"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/a1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout41"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:layout_column="0"
-            app:layout_row="9"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/b3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="1"
-            app:layout_row="7"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="5">
 
-        <ImageView
-            android:id="@+id/c3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout42"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/d3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout43"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/e3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout44"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/f3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout45"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/g3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout46"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/h3"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout47"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/h2"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout40"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:layout_column="7"
-            app:layout_row="8"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/a2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:background="#FBCD56"
             app:layout_column="0"
-            app:layout_row="8"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="5">
 
-        <ImageView
-            android:id="@+id/b2"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout48"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/c2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/d2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/e2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/f2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
-
-        <ImageView
-            android:id="@+id/g2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
-
-        <ImageView
-            android:id="@+id/a7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="0"
-            app:layout_row="2"
-            app:srcCompat="@drawable/black_tile" />
+            app:layout_row="6">
 
-        <ImageView
-            android:id="@+id/b1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout49"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout50"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout51"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout52"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout53"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout54"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout55"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout57"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#613915"
             app:layout_column="1"
-            app:layout_row="9"
-            app:srcCompat="@drawable/white_tile" />
+            app:layout_row="7">
 
-        <ImageView
-            android:id="@+id/c1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout58"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/d1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout59"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/e1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout60"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/f1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout61"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
 
-        <ImageView
-            android:id="@+id/g1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout62"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/black_tile" />
+            android:background="#FBCD56">
 
-        <ImageView
-            android:id="@+id/h1"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout63"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/white_tile" />
+            android:background="#613915">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout56"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FBCD56"
+            app:layout_column="0"
+            app:layout_row="7">
+
+        </RelativeLayout>
+
     </androidx.gridlayout.widget.GridLayout>
-
-    <RelativeLayout
-        android:id="@+id/RelativeLayout01"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="132dp"
-        android:background="#FBCD56"
-        app:layout_constrainedHeight="false"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toStartOf="@+id/gridLayout"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

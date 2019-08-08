@@ -51,9 +51,9 @@ public class PlayerInfo  {
 
     public class CurrentPieces {
 
-        List <PieceType> allPieces= new ArrayList<>();
-        List <PieceType> playerStagePieces= new ArrayList<>();
-        List <PieceType> stageUnlockedPieces= new ArrayList<>();
+        List <PieceType> allPieces;
+        List <PieceType> playerStagePieces;
+        List <PieceType> stageUnlockedPieces;
 
         public CurrentPieces(){
             this.allPieces = new ArrayList<>();

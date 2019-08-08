@@ -2,138 +2,97 @@ package com.example.magicchess;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Display;
-import android.widget.AbsoluteLayout;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.example.magicchess.engine.board.BoardUtils;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PlayChess extends AppCompatActivity {
-
-    List<Rect> tiles = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_chess);
 
-        List<ImageView> tiles = new ArrayList<>();
+        List<RelativeLayout> tiles = new ArrayList<>();
 
-        tiles.add((ImageView) findViewById(R.id.a8));
-        tiles.add((ImageView) findViewById(R.id.b8));
-        tiles.add((ImageView) findViewById(R.id.c8));
-        tiles.add((ImageView) findViewById(R.id.d8));
-        tiles.add((ImageView) findViewById(R.id.e8));
-        tiles.add((ImageView) findViewById(R.id.f8));
-        tiles.add((ImageView) findViewById(R.id.g8));
-        tiles.add((ImageView) findViewById(R.id.h8));
-        tiles.add((ImageView) findViewById(R.id.a7));
-        tiles.add((ImageView) findViewById(R.id.b7));
-        tiles.add((ImageView) findViewById(R.id.c7));
-        tiles.add((ImageView) findViewById(R.id.d7));
-        tiles.add((ImageView) findViewById(R.id.e7));
-        tiles.add((ImageView) findViewById(R.id.f7));
-        tiles.add((ImageView) findViewById(R.id.g7));
-        tiles.add((ImageView) findViewById(R.id.h7));
-        tiles.add((ImageView) findViewById(R.id.a6));
-        tiles.add((ImageView) findViewById(R.id.b6));
-        tiles.add((ImageView) findViewById(R.id.c6));
-        tiles.add((ImageView) findViewById(R.id.d6));
-        tiles.add((ImageView) findViewById(R.id.e6));
-        tiles.add((ImageView) findViewById(R.id.f6));
-        tiles.add((ImageView) findViewById(R.id.g6));
-        tiles.add((ImageView) findViewById(R.id.h6));
-        tiles.add((ImageView) findViewById(R.id.a5));
-        tiles.add((ImageView) findViewById(R.id.b5));
-        tiles.add((ImageView) findViewById(R.id.c5));
-        tiles.add((ImageView) findViewById(R.id.d5));
-        tiles.add((ImageView) findViewById(R.id.e5));
-        tiles.add((ImageView) findViewById(R.id.f5));
-        tiles.add((ImageView) findViewById(R.id.g5));
-        tiles.add((ImageView) findViewById(R.id.h5));
-        tiles.add((ImageView) findViewById(R.id.a4));
-        tiles.add((ImageView) findViewById(R.id.b4));
-        tiles.add((ImageView) findViewById(R.id.c4));
-        tiles.add((ImageView) findViewById(R.id.d4));
-        tiles.add((ImageView) findViewById(R.id.e4));
-        tiles.add((ImageView) findViewById(R.id.f4));
-        tiles.add((ImageView) findViewById(R.id.g4));
-        tiles.add((ImageView) findViewById(R.id.h4));
-        tiles.add((ImageView) findViewById(R.id.a3));
-        tiles.add((ImageView) findViewById(R.id.b3));
-        tiles.add((ImageView) findViewById(R.id.c3));
-        tiles.add((ImageView) findViewById(R.id.d3));
-        tiles.add((ImageView) findViewById(R.id.e3));
-        tiles.add((ImageView) findViewById(R.id.f3));
-        tiles.add((ImageView) findViewById(R.id.g3));
-        tiles.add((ImageView) findViewById(R.id.h3));
-        tiles.add((ImageView) findViewById(R.id.a2));
-        tiles.add((ImageView) findViewById(R.id.b2));
-        tiles.add((ImageView) findViewById(R.id.c2));
-        tiles.add((ImageView) findViewById(R.id.d2));
-        tiles.add((ImageView) findViewById(R.id.e2));
-        tiles.add((ImageView) findViewById(R.id.f2));
-        tiles.add((ImageView) findViewById(R.id.g2));
-        tiles.add((ImageView) findViewById(R.id.h2));
-        tiles.add((ImageView) findViewById(R.id.a1));
-        tiles.add((ImageView) findViewById(R.id.b1));
-        tiles.add((ImageView) findViewById(R.id.c1));
-        tiles.add((ImageView) findViewById(R.id.d1));
-        tiles.add((ImageView) findViewById(R.id.e1));
-        tiles.add((ImageView) findViewById(R.id.f1));
-        tiles.add((ImageView) findViewById(R.id.g1));
-        tiles.add((ImageView) findViewById(R.id.h1));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout00));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout01));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout02));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout03));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout04));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout05));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout06));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout07));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout08));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout09));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout10));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout11));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout12));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout13));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout14));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout15));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout16));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout17));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout18));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout19));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout20));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout21));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout22));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout23));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout24));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout25));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout26));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout27));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout28));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout29));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout30));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout31));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout32));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout33));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout34));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout35));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout36));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout37));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout38));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout39));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout40));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout41));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout42));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout43));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout44));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout45));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout46));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout47));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout48));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout49));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout50));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout51));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout52));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout53));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout54));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout55));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout56));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout57));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout58));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout59));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout60));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout61));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout62));
+        tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
         ImageView imageView =  new ImageView(this);
         imageView.setImageResource(R.drawable.rook);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.RelativeLayout01);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
 
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
-
-        float tileX = relativeLayout.getX();
-        float tileY = relativeLayout.getY();
-        System.out.println("difisdjsidj" + tileX);
-
-
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int screenWidth = size.x;
-        int screenHeight = size.y;
-
-        //GridLayout gridLayout = (GridLayout) findViewById(R.id.gridLayout);
-        /*GridLayout.LayoutParams layoutParams2 = new GridLayout.LayoutParams();
-        int gridWidth = gridLayout.getWidth();
-        int gridHeight = gridLayout.getHeight();*/
-
-        /*int tileWidth = 0;
-        int tileHeight = 0;
-        for (int i = 0; i<64; i++){
-            tileWidth = (screenWidth-gridWidth) + 50*(i%8)+25;
-            tileHeight = (screenHeight/2 - gridHeight/2) + 50*(i/8) + 25;
-        }*/
-
-        relativeLayout.setX(tileX);
-        relativeLayout.setY(tileY);
-
 
         relativeLayout.addView(imageView, layoutParams);
 
