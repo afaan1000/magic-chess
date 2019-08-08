@@ -85,40 +85,48 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
-        ImageView imageView = new ImageView(this);
-        imageView.setImageResource(R.drawable.rook);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
+        ImageView rook = new ImageView(this);
+        rook.setImageResource(R.drawable.rook);
+
 
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
 
-        relativeLayout.addView(imageView, layoutParams);
-        ImageView knightImage = new ImageView(this);
-        RelativeLayout knight = (RelativeLayout) findViewById(R.id.relativeLayout01);
-        knightImage.setImageResource(R.drawable.knight);
-        knight.addView(knightImage, layoutParams);
+        tiles.get(0).addView(rook, layoutParams);
 
-        ImageView pawnImage = new ImageView(this);
-        RelativeLayout pawn = (RelativeLayout) findViewById(R.id.relativeLayout08);
-        pawnImage.setImageResource(R.drawable.pawn);
-        pawn.addView(pawnImage, layoutParams);
+        ImageView knight = new ImageView(this);
+        knight.setImageResource(R.drawable.knight);
+        tiles.get(1).addView(knight, layoutParams);
+
+        ImageView bishop = new ImageView(this);
+        bishop.setImageResource(R.drawable.bishop);
+        tiles.get(2).addView(bishop, layoutParams);
+
+        ImageView queen = new ImageView(this);
+        queen.setImageResource(R.drawable.queen);
+        tiles.get(3).addView(queen, layoutParams);
+
+        ImageView king = new ImageView(this);
+        king.setImageResource(R.drawable.king);
+        tiles.get(4).addView(king, layoutParams);
         
-        ImageView bishopImage = new ImageView(this);
-        RelativeLayout bishop = (RelativeLayout) findViewById(R.id.relativeLayout02);
-        bishopImage.setImageResource(R.drawable.bishop);
-        bishop.addView(bishopImage, layoutParams);
 
-        ImageView kingImage = new ImageView(this);
-        RelativeLayout king = (RelativeLayout) findViewById(R.id.relativeLayout04);
-        kingImage.setImageResource(R.drawable.king);
-        king.addView(kingImage, layoutParams);
+        tiles.get(5).addView(bishop, layoutParams);
+        tiles.get(6).addView(knight, layoutParams);
+        tiles.get(7).addView(rook, layoutParams);
 
-        ImageView queenImage = new ImageView(this);
-        RelativeLayout queen = (RelativeLayout) findViewById(R.id.relativeLayout03);
-        queenImage.setImageResource(R.drawable.queen);
-        queen.addView(queenImage, layoutParams);
+        ImageView pawn = new ImageView(this);
+        pawn.setImageResource(R.drawable.pawn);
+        tiles.get(8).addView(pawn, layoutParams);
+        tiles.get(9).addView(pawn, layoutParams);
+        tiles.get(10).addView(pawn, layoutParams);
+        tiles.get(11).addView(pawn, layoutParams);
+        tiles.get(12).addView(pawn, layoutParams);
+        tiles.get(13).addView(pawn, layoutParams);
+        tiles.get(14).addView(pawn, layoutParams);
+
     }
 
 
