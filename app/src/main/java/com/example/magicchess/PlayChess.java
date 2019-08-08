@@ -85,7 +85,7 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
-        ImageView imageView =  new ImageView(this);
+        ImageView imageView = new ImageView(this);
         imageView.setImageResource(R.drawable.rook);
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
 
@@ -95,14 +95,31 @@ public class PlayChess extends AppCompatActivity {
         );
 
         relativeLayout.addView(imageView, layoutParams);
+        ImageView knightImage = new ImageView(this);
+        RelativeLayout knight = (RelativeLayout) findViewById(R.id.relativeLayout01);
+        knightImage.setImageResource(R.drawable.knight);
+        knight.addView(knightImage, layoutParams);
 
+        ImageView pawnImage = new ImageView(this);
+        RelativeLayout pawn = (RelativeLayout) findViewById(R.id.relativeLayout08);
+        pawnImage.setImageResource(R.drawable.pawn);
+        pawn.addView(pawnImage, layoutParams);
+        
+        ImageView bishopImage = new ImageView(this);
+        RelativeLayout bishop = (RelativeLayout) findViewById(R.id.relativeLayout02);
+        bishopImage.setImageResource(R.drawable.bishop);
+        bishop.addView(bishopImage, layoutParams);
 
+        ImageView kingImage = new ImageView(this);
+        RelativeLayout king = (RelativeLayout) findViewById(R.id.relativeLayout04);
+        kingImage.setImageResource(R.drawable.king);
+        king.addView(kingImage, layoutParams);
 
-
-
+        ImageView queenImage = new ImageView(this);
+        RelativeLayout queen = (RelativeLayout) findViewById(R.id.relativeLayout03);
+        queenImage.setImageResource(R.drawable.queen);
+        queen.addView(queenImage, layoutParams);
     }
-
-
 
 
 }
