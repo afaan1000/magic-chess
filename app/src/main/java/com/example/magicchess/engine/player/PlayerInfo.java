@@ -7,6 +7,8 @@ import java.util.List;
 
 import com.example.magicchess.Pieces;
 import com.example.magicchess.engine.pieces.Piece;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 
 import static com.example.magicchess.engine.pieces.Piece.*;
 
@@ -109,12 +111,12 @@ public class PlayerInfo  {
 
     public static class PieceAlignment{
 
-        HashMap<PieceType, Integer> pieceAlignment;
+        Multimap<PieceType, Integer> pieceAlignment;
         //List<PieceType> pieceAlignment;
         //CurrentPieces currentPieces;
 
         public PieceAlignment(){
-            this.pieceAlignment = new HashMap<>();
+            this.pieceAlignment = ArrayListMultimap.create();
             pieceAlignment.put(PieceType.PAWN, 48);
             pieceAlignment.put(PieceType.PAWN, 49);
             pieceAlignment.put(PieceType.PAWN, 50);
@@ -134,7 +136,7 @@ public class PlayerInfo  {
             //this.pieceAlignment.addAll(currentPieces.getStageUnlockedPieces());
         }
 
-        public HashMap<PieceType, Integer> getPieceAlignment() {
+        public Multimap<PieceType, Integer> getPieceAlignment() {
             return pieceAlignment;
         }
     }
