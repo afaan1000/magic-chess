@@ -90,7 +90,47 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
-        ImageView imageView =  new ImageView(this);
+
+
+        PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
+        //pieceAlignment.getPieceAlignment().size();
+        Iterator hmIterator = pieceAlignment.getPieceAlignment().entrySet().iterator();
+
+        while (hmIterator.hasNext()) {
+            Map.Entry mapElement = (Map.Entry) hmIterator.next();
+            ImageView imageView = new ImageView(this);
+            if (mapElement.getKey().equals(Piece.PieceType.PAWN)) {
+                imageView.setImageResource(R.drawable.pawn);
+            }
+            else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
+                imageView.setImageResource(R.drawable.knight);
+            }
+            else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
+                imageView.setImageResource(R.drawable.bishop);
+            }
+            else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
+                imageView.setImageResource(R.drawable.queen);
+            }
+            else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
+                imageView.setImageResource(R.drawable.king);
+            }
+
+            //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
+
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            tiles.get((int)mapElement.getValue()).addView(imageView, layoutParams);
+            //int marks = ((int)mapElement.getValue() + 10);
+            //System.out.println(mapElement.getKey() + " : " + marks);
+        }
+
+
+        /*ImageView imageView =  new ImageView(this);
         imageView.setImageResource(R.drawable.rook);
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
 
@@ -99,7 +139,7 @@ public class PlayChess extends AppCompatActivity {
                     RelativeLayout.LayoutParams.WRAP_CONTENT
             );
 
-        relativeLayout.addView(imageView, layoutParams);
+        relativeLayout.addView(imageView, layoutParams);*/
 
 
 
