@@ -94,8 +94,8 @@ public class PlayChess extends AppCompatActivity {
 
         PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
         //pieceAlignment.getPieceAlignment().size();
-        Iterator hmIterator = pieceAlignment.getPieceAlignment().entrySet().iterator();
-
+        Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
+                
         while (hmIterator.hasNext()) {
             Map.Entry mapElement = (Map.Entry) hmIterator.next();
             ImageView imageView = new ImageView(this);
