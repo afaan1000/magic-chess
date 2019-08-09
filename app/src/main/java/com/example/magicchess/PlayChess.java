@@ -90,7 +90,10 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
+
+
         PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
+        //pieceAlignment.getPieceAlignment().size();
         Iterator hmIterator = pieceAlignment.getPieceAlignment().entrySet().iterator();
 
         while (hmIterator.hasNext()) {
@@ -115,14 +118,17 @@ public class PlayChess extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.king);
             }
 
+            //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
 
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.WRAP_CONTENT,
                     RelativeLayout.LayoutParams.WRAP_CONTENT
             );
             tiles.get((int)mapElement.getValue()).addView(imageView, layoutParams);
-
+            //int marks = ((int)mapElement.getValue() + 10);
+            //System.out.println(mapElement.getKey() + " : " + marks);
         }
+
 
         /*ImageView imageView =  new ImageView(this);
         imageView.setImageResource(R.drawable.rook);
@@ -134,5 +140,14 @@ public class PlayChess extends AppCompatActivity {
             );
 
         relativeLayout.addView(imageView, layoutParams);*/
+
+
+
+
+
     }
+
+
+
+
 }
