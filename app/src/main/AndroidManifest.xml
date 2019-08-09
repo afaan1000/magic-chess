@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".PlayChess"></activity>
+        <activity android:name=".Alignment"></activity>
+        <activity android:name=".PlayChess" />
         <activity android:name=".Pieces" />
         <activity android:name=".MainActivity">
             <intent-filter>

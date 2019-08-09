@@ -2,6 +2,7 @@ package com.example.magicchess.engine.player;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.example.magicchess.Pieces;
@@ -103,6 +104,38 @@ public class PlayerInfo  {
 
         public List<PieceType> getStageUnlockedPieces() {
             return stageUnlockedPieces;
+        }
+    }
+
+    public static class PieceAlignment{
+
+        HashMap<PieceType, Integer> pieceAlignment;
+        //List<PieceType> pieceAlignment;
+        //CurrentPieces currentPieces;
+
+        public PieceAlignment(){
+            this.pieceAlignment = new HashMap<>();
+            pieceAlignment.put(PieceType.PAWN, 48);
+            pieceAlignment.put(PieceType.PAWN, 49);
+            pieceAlignment.put(PieceType.PAWN, 50);
+            pieceAlignment.put(PieceType.PAWN, 51);
+            pieceAlignment.put(PieceType.PAWN, 52);
+            pieceAlignment.put(PieceType.PAWN, 53);
+            pieceAlignment.put(PieceType.PAWN, 54);
+            pieceAlignment.put(PieceType.PAWN, 55);
+            pieceAlignment.put(PieceType.ROOK, 56);
+            pieceAlignment.put(PieceType.KNIGHT, 57);
+            pieceAlignment.put(PieceType.BISHOP, 58);
+            pieceAlignment.put(PieceType.QUEEN, 59);
+            pieceAlignment.put(PieceType.KING, 60);
+            pieceAlignment.put(PieceType.BISHOP, 61);
+            pieceAlignment.put(PieceType.KNIGHT, 62);
+            pieceAlignment.put(PieceType.ROOK, 63);
+            //this.pieceAlignment.addAll(currentPieces.getStageUnlockedPieces());
+        }
+
+        public HashMap<PieceType, Integer> getPieceAlignment() {
+            return pieceAlignment;
         }
     }
 }

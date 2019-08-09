@@ -7,8 +7,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.magicchess.engine.pieces.Piece;
+import com.example.magicchess.engine.player.PlayerInfo;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class PlayChess extends AppCompatActivity {
 
@@ -85,24 +90,57 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
-        ImageView imageView =  new ImageView(this);
-        imageView.setImageResource(R.drawable.rook);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
+        PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
+        //pieceAlignment.getPieceAlignment().size();
+        Iterator hmIterator = pieceAlignment.getPieceAlignment().entrySet().iterator();
 
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT
-        );
+        while (hmIterator.hasNext()) {
+            Map.Entry mapElement = (Map.Entry) hmIterator.next();
+            ImageView imageView = new ImageView(this);
+            if (mapElement.equals(Piece.PieceType.PAWN)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            else if (mapElement.equals(Piece.PieceType.ROOK)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            else if (mapElement.equals(Piece.PieceType.PAWN)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            else if (mapElement.equals(Piece.PieceType.PAWN)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            else if (mapElement.equals(Piece.PieceType.PAWN)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            else if (mapElement.equals(Piece.PieceType.PAWN)) {
+                imageView.setImageResource(R.drawable.rook);
+            }
+            //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
 
-        relativeLayout.addView(imageView, layoutParams);
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            tiles.get((int)mapElement.getValue()).addView(imageView, layoutParams);
+            //int marks = ((int)mapElement.getValue() + 10);
+            //System.out.println(mapElement.getKey() + " : " + marks);
+        }
+
+        /*for(Piece.PieceType piece : pieceAlignment.getPieceAlignment()){
+            ImageView imageView =  new ImageView(this);
+            imageView.setImageResource(R.drawable.rook);
+            //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
 
 
 
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
 
+            tiles.get(0).addView(imageView, layoutParams);
+        }*/
 
     }
-
-
-
 
 }

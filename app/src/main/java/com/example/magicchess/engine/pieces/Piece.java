@@ -4,7 +4,10 @@ import com.example.magicchess.Alliance;
 import com.example.magicchess.engine.board.Board;
 import com.example.magicchess.engine.board.Move;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public abstract class Piece {
 
@@ -81,6 +84,10 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            public List<Integer> getPosition(){
+                List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(48, 49, 50, 51, 52, 53, 54, 55));
+                return pieceStartingPositions;
+            }
         },
         KNIGHT("N") {
             @Override
@@ -91,6 +98,10 @@ public abstract class Piece {
             @Override
             public boolean isRook() {
                 return false;
+            }
+            public List<Integer> getPosition(){
+                List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(57, 62));
+                return pieceStartingPositions;
             }
         },
         BISHOP("B") {
@@ -103,6 +114,10 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            public List<Integer> getPosition(){
+                List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(58, 61));
+                return pieceStartingPositions;
+            }
         },
         ROOK("R") {
             @Override
@@ -113,6 +128,10 @@ public abstract class Piece {
             @Override
             public boolean isRook() {
                 return true;
+            }
+            public List<Integer> getPosition(){
+                List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(56, 63));
+                return pieceStartingPositions;
             }
         },
         QUEEN("Q") {
@@ -125,6 +144,10 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            public List<Integer> getPosition(){
+                List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(59));
+                return pieceStartingPositions;
+            }
         },
         KING("K") {
             @Override
@@ -135,6 +158,10 @@ public abstract class Piece {
             @Override
             public boolean isRook() {
                 return false;
+            }
+            public List<Integer> getPosition(){
+                List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(60));
+                return pieceStartingPositions;
             }
         };
 
