@@ -7,8 +7,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.magicchess.engine.pieces.Piece;
+import com.example.magicchess.engine.player.PlayerInfo;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class PlayChess extends AppCompatActivity {
 
@@ -85,49 +90,24 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
-        ImageView rook = new ImageView(this);
-        rook.setImageResource(R.drawable.rook);
+        ImageView imageView =  new ImageView(this);
+        imageView.setImageResource(R.drawable.rook);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
+
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+
+        relativeLayout.addView(imageView, layoutParams);
 
 
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT
-        );
 
-        tiles.get(0).addView(rook, layoutParams);
 
-        ImageView knight = new ImageView(this);
-        knight.setImageResource(R.drawable.knight);
-        tiles.get(1).addView(knight, layoutParams);
-
-        ImageView bishop = new ImageView(this);
-        bishop.setImageResource(R.drawable.bishop);
-        tiles.get(2).addView(bishop, layoutParams);
-
-        ImageView queen = new ImageView(this);
-        queen.setImageResource(R.drawable.queen);
-        tiles.get(3).addView(queen, layoutParams);
-
-        ImageView king = new ImageView(this);
-        king.setImageResource(R.drawable.king);
-        tiles.get(4).addView(king, layoutParams);
-        
-
-        tiles.get(5).addView(bishop, layoutParams);
-        tiles.get(6).addView(knight, layoutParams);
-        tiles.get(7).addView(rook, layoutParams);
-
-        ImageView pawn = new ImageView(this);
-        pawn.setImageResource(R.drawable.pawn);
-        tiles.get(8).addView(pawn, layoutParams);
-        tiles.get(9).addView(pawn, layoutParams);
-        tiles.get(10).addView(pawn, layoutParams);
-        tiles.get(11).addView(pawn, layoutParams);
-        tiles.get(12).addView(pawn, layoutParams);
-        tiles.get(13).addView(pawn, layoutParams);
-        tiles.get(14).addView(pawn, layoutParams);
 
     }
+
+
 
 
 }
