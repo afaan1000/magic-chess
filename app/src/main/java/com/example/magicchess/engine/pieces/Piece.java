@@ -75,6 +75,7 @@ public abstract class Piece {
     public enum PieceType{
 
         PAWN("P"){
+            int startPosition;
             @Override
             public boolean isKing(){
                 return false;
@@ -84,12 +85,19 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
-            public List<Integer> getPosition(){
+            public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(48, 49, 50, 51, 52, 53, 54, 55));
                 return pieceStartingPositions;
             }
+            public void setStartPosition(int startPosition){
+                this.startPosition = startPosition;
+            }
+            public int getStartPosition(int startPosition){
+                return this.startPosition ;
+            }
         },
         KNIGHT("N") {
+            int startPosition;
             @Override
             public boolean isKing() {
                 return false;
@@ -99,12 +107,19 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
-            public List<Integer> getPosition(){
+            public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(57, 62));
                 return pieceStartingPositions;
             }
+            public void setStartPosition(int startPosition){
+                this.startPosition = startPosition;
+            }
+            public int getStartPosition(int startPosition){
+                return this.startPosition ;
+            }
         },
         BISHOP("B") {
+            int startPosition;
             @Override
             public boolean isKing() {
                 return false;
@@ -114,12 +129,19 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
-            public List<Integer> getPosition(){
+            public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(58, 61));
                 return pieceStartingPositions;
             }
+            public void setStartPosition(int startPosition){
+                this.startPosition = startPosition;
+            }
+            public int getStartPosition(int startPosition){
+                return this.startPosition ;
+            }
         },
         ROOK("R") {
+            int startPosition;
             @Override
             public boolean isKing() {
                 return false;
@@ -129,12 +151,19 @@ public abstract class Piece {
             public boolean isRook() {
                 return true;
             }
-            public List<Integer> getPosition(){
+            public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(56, 63));
                 return pieceStartingPositions;
             }
+            public void setStartPosition(int startPosition){
+                this.startPosition = startPosition;
+            }
+            public int getStartPosition(int startPosition){
+                return this.startPosition ;
+            }
         },
         QUEEN("Q") {
+            int startPosition;
             @Override
             public boolean isKing() {
                 return false;
@@ -144,12 +173,19 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
-            public List<Integer> getPosition(){
+            public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(59));
                 return pieceStartingPositions;
             }
+            public void setStartPosition(int startPosition){
+                this.startPosition = startPosition;
+            }
+            public int getStartPosition(int startPosition){
+                return this.startPosition ;
+            }
         },
         KING("K") {
+            int startPosition;
             @Override
             public boolean isKing() {
                 return true;
@@ -159,9 +195,16 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
-            public List<Integer> getPosition(){
+            public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(60));
                 return pieceStartingPositions;
+            }
+
+            public void setStartPosition(int startPosition){
+                this.startPosition = startPosition;
+            }
+            public int getStartPosition(int startPosition){
+                return this.startPosition ;
             }
         };
 
