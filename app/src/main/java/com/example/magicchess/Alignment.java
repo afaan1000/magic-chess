@@ -22,6 +22,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.magicchess.engine.player.PlayerInfo.*;
+
 
 public class Alignment extends AppCompatActivity {
 
@@ -98,7 +100,7 @@ public class Alignment extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.alignment63));
 
 
-        PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
+        PieceAlignment pieceAlignment = new PieceAlignment();
         //pieceAlignment.getPieceAlignment().size();
         Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
         while (hmIterator.hasNext()) {
@@ -131,7 +133,7 @@ public class Alignment extends AppCompatActivity {
 
 
         PlayerInfo playerInfo = new PlayerInfo();
-        PlayerInfo.CurrentPieces currentPieces = new PlayerInfo.CurrentPieces();
+        CurrentPieces currentPieces = new CurrentPieces();
         List<Piece.PieceType> stageUnlockedPieces = currentPieces.getStageUnlockedPieces();
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         //RelativeLayout relativeLayout
@@ -169,7 +171,7 @@ public class Alignment extends AppCompatActivity {
         }
 
         setToggleEvent(linearLayout);
-        swap2(linearLayout, tiles, stageUnlockedPieces);
+        swap2(linearLayout, tiles, stageUnlockedPieces, pieceAlignment);
 
     }
 
@@ -214,10 +216,11 @@ public class Alignment extends AppCompatActivity {
 
     }
 
-    private void swap2(final LinearLayout linearLayout, List<RelativeLayout> tiles, List<Piece.PieceType> stageUnlockedPieces){
+    private void swap2(final LinearLayout linearLayout, List<RelativeLayout> tiles, List<Piece.PieceType> stageUnlockedPieces, final PieceAlignment pieceAlignment){
 
         final LinearLayout linearLayout2 = linearLayout;
         final List<Piece.PieceType> stageUnlockedPieces2 = stageUnlockedPieces;
+        //final PieceAlignment pieceAlignment2 = pieceAlignment;
         for (int i=48; i>47 && i<64; i++){
             final RelativeLayout relativeLayout = tiles.get(i);
             final int indexOfRelativeLayout = i;
@@ -257,12 +260,34 @@ public class Alignment extends AppCompatActivity {
                         for (int possibleStartPosition : (selectedPieceType.getPossibleStartPositions())) {
                             if (toGridIndex == possibleStartPosition) {
                                 relativeLayout.removeAllViews();
-                                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                                /*RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
                                         100,
                                         100
+                                );*/
+                                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                                        RelativeLayout.LayoutParams.WRAP_CONTENT
                                 );
                                 relativeLayout.addView(imageView, layoutParams);
-                                relativeLayout.setBackgroundColor(Color.parseColor("#FF6F00"));
+                                pieceAlignment.getPieceAlignment().put(selectedPieceType, toGridIndex);
+                                //int colorId = getBackgroundColor(relativeLayout);
+                                //if (colorId == -1) {
+                                    /*for (int j = 48; j > 47 && j < 64; j++) {
+                                        final RelativeLayout relativeLayout2 = (RelativeLayout) linearLayout2.getChildAt(j);
+                                        int color = getBackgroundColor(relativeLayout2);
+                                        int red = (color >> 16) & 0xFF;
+                                        int green = (color >> 8) & 0xFF;
+                                        int blue = (color >> 0) & 0xFF;
+                                        String rgbColor = "#" + red + green + blue;
+                                        int rgbIntColor = Color.parseColor("#FF6F00");
+                                        if (getBackgroundColor(relativeLayout2) == rgbIntColor) {
+                                            relativeLayout2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                        } else {
+                                            relativeLayout.setBackgroundColor(Color.parseColor("#FF6F00"));
+                                        }
+                                    }*/
+                                    relativeLayout.setBackgroundColor(Color.parseColor("#FF6F00"));
+                                //}
 
                             } else {
                                 //relativeLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
