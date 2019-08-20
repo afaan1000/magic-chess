@@ -85,6 +85,7 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            @Override
             public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(48, 49, 50, 51, 52, 53, 54, 55));
                 return pieceStartingPositions;
@@ -107,6 +108,7 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            @Override
             public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(57, 62));
                 return pieceStartingPositions;
@@ -129,6 +131,7 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            @Override
             public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(58, 61));
                 return pieceStartingPositions;
@@ -151,6 +154,7 @@ public abstract class Piece {
             public boolean isRook() {
                 return true;
             }
+            @Override
             public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(56, 63));
                 return pieceStartingPositions;
@@ -173,6 +177,7 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            @Override
             public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(59));
                 return pieceStartingPositions;
@@ -195,6 +200,7 @@ public abstract class Piece {
             public boolean isRook() {
                 return false;
             }
+            @Override
             public List<Integer> getPossibleStartPositions(){
                 List<Integer> pieceStartingPositions = new ArrayList<>(Arrays.asList(60));
                 return pieceStartingPositions;
@@ -221,5 +227,7 @@ public abstract class Piece {
         public abstract boolean isKing();
 
         public abstract boolean isRook();
+
+        public abstract List<Integer> getPossibleStartPositions();
     }
 }

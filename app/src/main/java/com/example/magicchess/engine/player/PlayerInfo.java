@@ -52,7 +52,7 @@ public class PlayerInfo  {
         }
     }
 
-    public class CurrentPieces {
+    public static class CurrentPieces {
 
         List <PieceType> allPieces;
         List <PieceType> playerStagePieces;
@@ -62,6 +62,26 @@ public class PlayerInfo  {
             this.allPieces = new ArrayList<>();
             this.playerStagePieces = new ArrayList<>();
             this.stageUnlockedPieces = new ArrayList<>();
+            allPieces.add(PieceType.PAWN);
+            allPieces.add(PieceType.KING);
+            allPieces.add(PieceType.ROOK);
+            allPieces.add(PieceType.BISHOP);
+            allPieces.add(PieceType.QUEEN);
+            allPieces.add(PieceType.KNIGHT);
+
+            playerStagePieces.add(PieceType.PAWN);
+            playerStagePieces.add(PieceType.KING);
+            playerStagePieces.add(PieceType.ROOK);
+            playerStagePieces.add(PieceType.BISHOP);
+            playerStagePieces.add(PieceType.QUEEN);
+            playerStagePieces.add(PieceType.KNIGHT);
+
+            stageUnlockedPieces.add(PieceType.PAWN);
+            stageUnlockedPieces.add(PieceType.KING);
+            stageUnlockedPieces.add(PieceType.ROOK);
+            stageUnlockedPieces.add(PieceType.BISHOP);
+            stageUnlockedPieces.add(PieceType.QUEEN);
+            stageUnlockedPieces.add(PieceType.KNIGHT);
         }
 
         public void piecesAtStartOfGame(){

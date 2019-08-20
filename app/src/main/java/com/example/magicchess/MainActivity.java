@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         init();
         battle();
+        alignment();
     }
 
     public ImageView piecesButton;
@@ -45,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
                 Intent boardPage = new Intent(MainActivity.this, PlayChess.class);
 
                 startActivity(boardPage);
+
+            }
+        });
+    }
+
+    public Button alignment;
+
+    public void alignment(){
+        alignment = (Button) findViewById(R.id.allignmentButton);
+        alignment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent alignmentPage = new Intent(MainActivity.this, Alignment.class);
+
+                startActivity(alignmentPage);
 
             }
         });
