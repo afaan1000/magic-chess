@@ -160,6 +160,38 @@ public class PlayerInfo  {
             return pieceAlignment;
         }
     }
+
+    public static class WhitePieceAlignment{
+
+        Multimap<PieceType, Integer> whitePieceAlignment;
+        //List<PieceType> pieceAlignment;
+        //CurrentPieces currentPieces;
+
+        public WhitePieceAlignment(){
+            this.whitePieceAlignment = ArrayListMultimap.create();
+            whitePieceAlignment.put(PieceType.PAWN, 8);
+            whitePieceAlignment.put(PieceType.PAWN, 9);
+            whitePieceAlignment.put(PieceType.PAWN, 10);
+            whitePieceAlignment.put(PieceType.PAWN, 11);
+            whitePieceAlignment.put(PieceType.PAWN, 12);
+            whitePieceAlignment.put(PieceType.PAWN, 13);
+            whitePieceAlignment.put(PieceType.PAWN, 14);
+            whitePieceAlignment.put(PieceType.PAWN, 15);
+            whitePieceAlignment.put(PieceType.ROOK, 7);
+            whitePieceAlignment.put(PieceType.KNIGHT, 1);
+            whitePieceAlignment.put(PieceType.BISHOP, 2);
+            whitePieceAlignment.put(PieceType.QUEEN, 3);
+            whitePieceAlignment.put(PieceType.KING, 4);
+            whitePieceAlignment.put(PieceType.BISHOP, 5);
+            whitePieceAlignment.put(PieceType.KNIGHT, 6);
+            whitePieceAlignment.put(PieceType.ROOK, 0);
+            //this.pieceAlignment.addAll(currentPieces.getStageUnlockedPieces());
+        }
+
+        public Multimap<PieceType, Integer> getPieceAlignment() {
+            return whitePieceAlignment;
+        }
+    }
 }
 
 
