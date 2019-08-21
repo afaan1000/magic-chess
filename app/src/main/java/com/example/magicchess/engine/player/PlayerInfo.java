@@ -237,7 +237,7 @@ public class PlayerInfo  {
         }
     }
 
-    public static class WhitePieceAlignment{
+    /*public static class WhitePieceAlignment{
 
         Multimap<PieceType, Integer> whitePieceAlignment;
         //List<PieceType> pieceAlignment;
@@ -267,7 +267,7 @@ public class PlayerInfo  {
         public Multimap<PieceType, Integer> getPieceAlignment() {
             return whitePieceAlignment;
         }
-    }
+    }*/
 }
 
 
