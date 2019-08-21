@@ -115,23 +115,22 @@ public class PlayChess extends AppCompatActivity {
             chessBoard.createStandardBoard();
 
             Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
-
-            while (hmIterator.hasNext()) {
+           while (hmIterator.hasNext()) {
                 Map.Entry mapElement = (Map.Entry) hmIterator.next();
                 ImageView imageView = new ImageView(this);
                 if ((int)mapElement.getValue() < 16) {
                     if (mapElement.getKey().equals(Piece.PieceType.PAWN)) {
                         imageView.setImageResource(R.drawable.pawn);
                     } else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
-                        imageView.setImageResource(R.drawable.rook);
+                        imageView.setImageResource(R.drawable.w_rook);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
-                        imageView.setImageResource(R.drawable.knight);
+                        imageView.setImageResource(R.drawable.w_knight);
                     } else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
                         imageView.setImageResource(R.drawable.bishop);
                     } else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
-                        imageView.setImageResource(R.drawable.queen);
+                        imageView.setImageResource(R.drawable.w_queen);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
-                        imageView.setImageResource(R.drawable.king);
+                        imageView.setImageResource(R.drawable.w_king);
                     }
                 }
                 else {
@@ -190,15 +189,15 @@ public class PlayChess extends AppCompatActivity {
                     if (mapElement.getKey().equals(Piece.PieceType.PAWN)) {
                         imageView.setImageResource(R.drawable.pawn);
                     } else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
-                        imageView.setImageResource(R.drawable.rook);
+                        imageView.setImageResource(R.drawable.w_rook);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
-                        imageView.setImageResource(R.drawable.knight);
+                        imageView.setImageResource(R.drawable.w_knight);
                     } else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
                         imageView.setImageResource(R.drawable.bishop);
                     } else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
-                        imageView.setImageResource(R.drawable.queen);
+                        imageView.setImageResource(R.drawable.w_queen);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
-                        imageView.setImageResource(R.drawable.king);
+                        imageView.setImageResource(R.drawable.w_king);
                     }
                 }
 
