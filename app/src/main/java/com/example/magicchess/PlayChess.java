@@ -90,8 +90,6 @@ public class PlayChess extends AppCompatActivity {
         tiles.add((RelativeLayout) findViewById(R.id.relativeLayout63));
 
 
-
-
         PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
         //pieceAlignment.getPieceAlignment().size();
         Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
@@ -101,33 +99,53 @@ public class PlayChess extends AppCompatActivity {
             ImageView imageView = new ImageView(this);
             if (mapElement.getKey().equals(Piece.PieceType.PAWN)) {
                 imageView.setImageResource(R.drawable.pawn);
-            }
-            else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
+            } else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
                 imageView.setImageResource(R.drawable.rook);
-            }
-            else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
+
+            } else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
                 imageView.setImageResource(R.drawable.knight);
-            }
-            else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
+            } else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
                 imageView.setImageResource(R.drawable.bishop);
-            }
-            else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
+            } else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
                 imageView.setImageResource(R.drawable.queen);
-            }
-            else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
+            } else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
                 imageView.setImageResource(R.drawable.king);
             }
 
-            //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
+            PlayerInfo.WhitePieceAlignment whitePieceAlignment = new PlayerInfo.WhitePieceAlignment();
+            //pieceAlignment.getPieceAlignment().size();
+            Iterator hmIterator2 = whitePieceAlignment.getPieceAlignment().entries().iterator();
 
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.WRAP_CONTENT,
-                    RelativeLayout.LayoutParams.WRAP_CONTENT
-            );
-            tiles.get((int)mapElement.getValue()).addView(imageView, layoutParams);
-            //int marks = ((int)mapElement.getValue() + 10);
-            //System.out.println(mapElement.getKey() + " : " + marks);
-        }
+            while (hmIterator2.hasNext()) {
+                Map.Entry map = (Map.Entry) hmIterator2.next();
+                ImageView image = new ImageView(this);
+                if (map.getKey().equals(Piece.PieceType.PAWN)) {
+                    image.setImageResource(R.drawable.pawn);
+                } else if (map.getKey().equals(Piece.PieceType.ROOK)) {
+                    image.setImageResource(R.drawable.w_rook);
+
+                } else if (map.getKey().equals(Piece.PieceType.KNIGHT)) {
+                    image.setImageResource(R.drawable.w_knight);
+                } else if (map.getKey().equals(Piece.PieceType.BISHOP)) {
+                    image.setImageResource(R.drawable.bishop);
+                } else if (map.getKey().equals(Piece.PieceType.QUEEN)) {
+                    image.setImageResource(R.drawable.w_queen);
+                } else if (map.getKey().equals(Piece.PieceType.KING)) {
+                    image.setImageResource(R.drawable.w_king);
+                }
+
+
+                //RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
+
+                RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                        RelativeLayout.LayoutParams.WRAP_CONTENT,
+                        RelativeLayout.LayoutParams.WRAP_CONTENT
+                );
+                tiles.get((int) mapElement.getValue()).addView(imageView, layoutParams);
+                tiles.get((int) map.getValue()).addView(image, layoutParams);
+                //int marks = ((int)mapElement.getValue() + 10);
+                //System.out.println(mapElement.getKey() + " : " + marks);
+            }
 
 
         /*ImageView imageView =  new ImageView(this);
@@ -142,12 +160,8 @@ public class PlayChess extends AppCompatActivity {
         relativeLayout.addView(imageView, layoutParams);*/
 
 
-
+        }
 
 
     }
-
-
-
-
 }
