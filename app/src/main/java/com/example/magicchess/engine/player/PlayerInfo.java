@@ -137,6 +137,45 @@ public class PlayerInfo  {
 
         public PieceAlignment(){
             this.pieceAlignment = ArrayListMultimap.create();
+            /*pieceAlignment.put(PieceType.PAWN, 48);
+            pieceAlignment.put(PieceType.PAWN, 49);
+            pieceAlignment.put(PieceType.PAWN, 50);
+            pieceAlignment.put(PieceType.PAWN, 51);
+            pieceAlignment.put(PieceType.PAWN, 52);
+            pieceAlignment.put(PieceType.PAWN, 53);
+            pieceAlignment.put(PieceType.PAWN, 54);
+            pieceAlignment.put(PieceType.PAWN, 55);
+            pieceAlignment.put(PieceType.ROOK, 56);
+            pieceAlignment.put(PieceType.KNIGHT, 57);
+            pieceAlignment.put(PieceType.BISHOP, 58);
+            pieceAlignment.put(PieceType.QUEEN, 59);
+            pieceAlignment.put(PieceType.KING, 60);
+            pieceAlignment.put(PieceType.BISHOP, 61);
+            pieceAlignment.put(PieceType.KNIGHT, 62);
+            pieceAlignment.put(PieceType.ROOK, 63);*/
+            //this.pieceAlignment.addAll(currentPieces.getStageUnlockedPieces());
+        }
+
+        public void pieceAlignmentIfWhite(){
+            pieceAlignment.put(PieceType.PAWN, 48);
+            pieceAlignment.put(PieceType.PAWN, 49);
+            pieceAlignment.put(PieceType.PAWN, 50);
+            pieceAlignment.put(PieceType.PAWN, 51);
+            pieceAlignment.put(PieceType.PAWN, 52);
+            pieceAlignment.put(PieceType.PAWN, 53);
+            pieceAlignment.put(PieceType.PAWN, 54);
+            pieceAlignment.put(PieceType.PAWN, 55);
+            pieceAlignment.put(PieceType.ROOK, 56);
+            pieceAlignment.put(PieceType.KNIGHT, 57);
+            pieceAlignment.put(PieceType.BISHOP, 58);
+            pieceAlignment.put(PieceType.QUEEN, 60);
+            pieceAlignment.put(PieceType.KING, 59);
+            pieceAlignment.put(PieceType.BISHOP, 61);
+            pieceAlignment.put(PieceType.KNIGHT, 62);
+            pieceAlignment.put(PieceType.ROOK, 63);
+        }
+
+        public void pieceAlignmentIfBlack(){
             pieceAlignment.put(PieceType.PAWN, 48);
             pieceAlignment.put(PieceType.PAWN, 49);
             pieceAlignment.put(PieceType.PAWN, 50);
@@ -153,7 +192,44 @@ public class PlayerInfo  {
             pieceAlignment.put(PieceType.BISHOP, 61);
             pieceAlignment.put(PieceType.KNIGHT, 62);
             pieceAlignment.put(PieceType.ROOK, 63);
-            //this.pieceAlignment.addAll(currentPieces.getStageUnlockedPieces());
+        }
+
+        public void opponentPieceAlignmentIfWhite(){
+            pieceAlignment.put(PieceType.PAWN, 8);
+            pieceAlignment.put(PieceType.PAWN, 9);
+            pieceAlignment.put(PieceType.PAWN, 10);
+            pieceAlignment.put(PieceType.PAWN, 11);
+            pieceAlignment.put(PieceType.PAWN, 12);
+            pieceAlignment.put(PieceType.PAWN, 13);
+            pieceAlignment.put(PieceType.PAWN, 14);
+            pieceAlignment.put(PieceType.PAWN, 15);
+            pieceAlignment.put(PieceType.ROOK, 0);
+            pieceAlignment.put(PieceType.KNIGHT, 1);
+            pieceAlignment.put(PieceType.BISHOP, 2);
+            pieceAlignment.put(PieceType.QUEEN, 3);
+            pieceAlignment.put(PieceType.KING, 4);
+            pieceAlignment.put(PieceType.BISHOP, 5);
+            pieceAlignment.put(PieceType.KNIGHT, 6);
+            pieceAlignment.put(PieceType.ROOK, 7);
+        }
+
+        public void opponentPieceAlignmentIfBlack(){
+            pieceAlignment.put(PieceType.PAWN, 8);
+            pieceAlignment.put(PieceType.PAWN, 9);
+            pieceAlignment.put(PieceType.PAWN, 10);
+            pieceAlignment.put(PieceType.PAWN, 11);
+            pieceAlignment.put(PieceType.PAWN, 12);
+            pieceAlignment.put(PieceType.PAWN, 13);
+            pieceAlignment.put(PieceType.PAWN, 14);
+            pieceAlignment.put(PieceType.PAWN, 15);
+            pieceAlignment.put(PieceType.ROOK, 0);
+            pieceAlignment.put(PieceType.KNIGHT, 1);
+            pieceAlignment.put(PieceType.BISHOP, 2);
+            pieceAlignment.put(PieceType.QUEEN, 4);
+            pieceAlignment.put(PieceType.KING, 3);
+            pieceAlignment.put(PieceType.BISHOP, 5);
+            pieceAlignment.put(PieceType.KNIGHT, 6);
+            pieceAlignment.put(PieceType.ROOK, 7);
         }
 
         public Multimap<PieceType, Integer> getPieceAlignment() {

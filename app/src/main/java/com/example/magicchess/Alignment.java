@@ -101,6 +101,7 @@ public class Alignment extends AppCompatActivity {
 
 
         PieceAlignment pieceAlignment = new PieceAlignment();
+        pieceAlignment.pieceAlignmentIfBlack();
         //pieceAlignment.getPieceAlignment().size();
         Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
         while (hmIterator.hasNext()) {
