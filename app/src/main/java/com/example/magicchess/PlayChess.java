@@ -2,20 +2,33 @@ package com.example.magicchess;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.example.magicchess.engine.board.Board;
 import com.example.magicchess.engine.pieces.Piece;
 import com.example.magicchess.engine.player.PlayerInfo;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class PlayChess extends AppCompatActivity {
+
+    private Board chessBoard;
+    private Piece humanMovedPiece;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +104,21 @@ public class PlayChess extends AppCompatActivity {
 
 
 
+        int alliance = getRandomNumberInRange(0, 1);
+
+
 
         PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
+        if (alliance == 0){
+            pieceAlignment.pieceAlignmentIfWhite();
+            pieceAlignment.opponentPieceAlignmentIfBlack();
+            chessBoard.createStandardBoard();
+        }
+        else {
+            pieceAlignment.pieceAlignmentIfBlack();
+            pieceAlignment.opponentPieceAlignmentIfWhite();
+            chessBoard.createStandardBoard2();
+        }
         //pieceAlignment.getPieceAlignment().size();
         Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
 
@@ -141,10 +167,63 @@ public class PlayChess extends AppCompatActivity {
 
         relativeLayout.addView(imageView, layoutParams);*/
 
+    }
 
 
+    private void test(final LinearLayout linearLayout, List<RelativeLayout> tiles, List<Piece.PieceType> stageUnlockedPieces){
 
+        final RelativeLayout sourceTile = null;
 
+        for(int i = 0; i<63; i++) {
+            final List<RelativeLayout> checkTiles = tiles;
+            final RelativeLayout relativeLayout = tiles.get(i);
+            relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    for(int i = 0; i<63; i++) {
+                        final RelativeLayout relativeLayoutCheck = checkTiles.get(i);
+                        if (getBackgroundColor(relativeLayoutCheck) == Color.parseColor("#FF6F00") || getBackgroundColor(relativeLayoutCheck) == -1) {
+                            relativeLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                        }
+                    }
+
+                    relativeLayout.setBackgroundColor(Color.parseColor("#FF6F00"));
+                }
+            });
+        }
+    }
+
+    private static int getRandomNumberInRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+    public static int getBackgroundColor(View view) {
+        Drawable drawable = view.getBackground();
+        if (drawable instanceof ColorDrawable) {
+            ColorDrawable colorDrawable = (ColorDrawable) drawable;
+            if (Build.VERSION.SDK_INT >= 11) {
+                return colorDrawable.getColor();
+            }
+            try {
+                Field field = colorDrawable.getClass().getDeclaredField("mState");
+                field.setAccessible(true);
+                Object object = field.get(colorDrawable);
+                field = object.getClass().getDeclaredField("mUseColor");
+                field.setAccessible(true);
+                return field.getInt(object);
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
     }
 
 
