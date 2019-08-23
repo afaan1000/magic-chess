@@ -14,7 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.magicchess.engine.board.Board;
+import com.example.magicchess.engine.board.Move;
 import com.example.magicchess.engine.pieces.Piece;
+import com.example.magicchess.engine.player.MoveTransition;
 import com.example.magicchess.engine.player.PlayerInfo;
 
 import java.lang.reflect.Field;
@@ -24,10 +26,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import static com.example.magicchess.engine.player.PlayerInfo.*;
+
 public class PlayChess extends AppCompatActivity {
 
     private Board chessBoard;
     private Piece humanMovedPiece;
+    private Piece sourceTile;
+    private RelativeLayout fromRelativeLayout;
+    private ImageView saveImageView;
 
 
     @Override
@@ -104,33 +111,34 @@ public class PlayChess extends AppCompatActivity {
 
 
 
-        int alliance = getRandomNumberInRange(0, 1);
+        int alliance = getRandomNumberInRange(0, 2);
 
+        System.out.println(alliance);
 
-
-        PlayerInfo.PieceAlignment pieceAlignment = new PlayerInfo.PieceAlignment();
+        PieceAlignment pieceAlignment = new PieceAlignment();
         if (alliance == 0){
             pieceAlignment.pieceAlignmentIfWhite();
             pieceAlignment.opponentPieceAlignmentIfBlack();
-            chessBoard.createStandardBoard();
+            chessBoard = chessBoard.createStandardBoard2();
 
             Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
-           while (hmIterator.hasNext()) {
+
+            while (hmIterator.hasNext()) {
                 Map.Entry mapElement = (Map.Entry) hmIterator.next();
                 ImageView imageView = new ImageView(this);
-                if ((int)mapElement.getValue() < 16) {
+                if ((int)mapElement.getValue() > 47) {
                     if (mapElement.getKey().equals(Piece.PieceType.PAWN)) {
-                        imageView.setImageResource(R.drawable.pawn);
+                        imageView.setImageResource(R.drawable.wp);
                     } else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
-                        imageView.setImageResource(R.drawable.w_rook);
+                        imageView.setImageResource(R.drawable.wr);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
-                        imageView.setImageResource(R.drawable.w_knight);
+                        imageView.setImageResource(R.drawable.wn);
                     } else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
-                        imageView.setImageResource(R.drawable.bishop);
+                        imageView.setImageResource(R.drawable.wb);
                     } else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
-                        imageView.setImageResource(R.drawable.w_queen);
+                        imageView.setImageResource(R.drawable.wq);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
-                        imageView.setImageResource(R.drawable.w_king);
+                        imageView.setImageResource(R.drawable.wk);
                     }
                 }
                 else {
@@ -156,6 +164,7 @@ public class PlayChess extends AppCompatActivity {
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
                 tiles.get((int)mapElement.getValue()).addView(imageView, layoutParams);
+                System.out.println(mapElement.getValue());
                 //int marks = ((int)mapElement.getValue() + 10);
                 //System.out.println(mapElement.getKey() + " : " + marks);
             }
@@ -163,7 +172,7 @@ public class PlayChess extends AppCompatActivity {
         else {
             pieceAlignment.pieceAlignmentIfBlack();
             pieceAlignment.opponentPieceAlignmentIfWhite();
-            chessBoard.createStandardBoard2();
+            chessBoard = chessBoard.createStandardBoard();
 
             Iterator hmIterator = pieceAlignment.getPieceAlignment().entries().iterator();
 
@@ -187,17 +196,17 @@ public class PlayChess extends AppCompatActivity {
                 }
                 else {
                     if (mapElement.getKey().equals(Piece.PieceType.PAWN)) {
-                        imageView.setImageResource(R.drawable.pawn);
+                        imageView.setImageResource(R.drawable.wp);
                     } else if (mapElement.getKey().equals(Piece.PieceType.ROOK)) {
-                        imageView.setImageResource(R.drawable.w_rook);
+                        imageView.setImageResource(R.drawable.wr);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KNIGHT)) {
-                        imageView.setImageResource(R.drawable.w_knight);
+                        imageView.setImageResource(R.drawable.wn);
                     } else if (mapElement.getKey().equals(Piece.PieceType.BISHOP)) {
-                        imageView.setImageResource(R.drawable.bishop);
+                        imageView.setImageResource(R.drawable.wb);
                     } else if (mapElement.getKey().equals(Piece.PieceType.QUEEN)) {
-                        imageView.setImageResource(R.drawable.w_queen);
+                        imageView.setImageResource(R.drawable.wq);
                     } else if (mapElement.getKey().equals(Piece.PieceType.KING)) {
-                        imageView.setImageResource(R.drawable.w_king);
+                        imageView.setImageResource(R.drawable.wk);
                     }
                 }
 
@@ -212,42 +221,60 @@ public class PlayChess extends AppCompatActivity {
                 //System.out.println(mapElement.getKey() + " : " + marks);
             }
         }
-        //pieceAlignment.getPieceAlignment().size();
 
-
-
-        /*ImageView imageView =  new ImageView(this);
-        imageView.setImageResource(R.drawable.rook);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout00);
-
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.WRAP_CONTENT,
-                    RelativeLayout.LayoutParams.WRAP_CONTENT
-            );
-
-        relativeLayout.addView(imageView, layoutParams);*/
+        test(tiles, pieceAlignment);
 
     }
 
 
-    private void test(final LinearLayout linearLayout, List<RelativeLayout> tiles, List<Piece.PieceType> stageUnlockedPieces){
+    private void test(List<RelativeLayout> tiles, final PieceAlignment pieceAlignment){
 
-        final RelativeLayout sourceTile = null;
-
-        for(int i = 0; i<63; i++) {
+        for(int i = 0; i<64; i++) {
+            final int piecePosition = i;
             final List<RelativeLayout> checkTiles = tiles;
             final RelativeLayout relativeLayout = tiles.get(i);
+
             relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    for(int i = 0; i<63; i++) {
-                        final RelativeLayout relativeLayoutCheck = checkTiles.get(i);
-                        if (getBackgroundColor(relativeLayoutCheck) == Color.parseColor("#FF6F00") || getBackgroundColor(relativeLayoutCheck) == -1) {
-                            relativeLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                        }
-                    }
 
-                    relativeLayout.setBackgroundColor(Color.parseColor("#FF6F00"));
+
+                    if (sourceTile == null) {
+                        /*for(int i = 0; i<63; i++) {
+                            final RelativeLayout relativeLayoutCheck = checkTiles.get(i);
+                            if (getBackgroundColor(relativeLayoutCheck) == Color.parseColor("#FF6F00") || getBackgroundColor(relativeLayoutCheck) == -1) {
+                                if (fromRelativeLayout != null) {
+                                    fromRelativeLayout.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                                }
+                            }
+                        }*/
+
+                        sourceTile = chessBoard.getPiece(piecePosition);
+                        //sourceTile = piecePosition;
+                        System.out.println(sourceTile.getPieceType() == Piece.PieceType.PAWN);
+                        relativeLayout.setBackgroundColor(Color.parseColor("#FF6F00"));
+                        humanMovedPiece = sourceTile;
+                        if (humanMovedPiece == null) {
+                            sourceTile = null;
+                        }
+                        fromRelativeLayout = relativeLayout;
+                        saveImageView = (ImageView) fromRelativeLayout.getChildAt(0);
+                    }else {
+                        final Move move = Move.MoveFactory.createMove(chessBoard, sourceTile.getPiecePosition(),
+                                piecePosition);
+                        final MoveTransition transition = chessBoard.currentPlayer().makeMove(move);
+                        System.out.println("" + sourceTile.getPiecePosition() + "    " + piecePosition + transition.getMoveStatus());
+                        if (transition.getMoveStatus().isDone() == true || chessBoard.currentPlayer().isMoveLegal(move)) {
+                            chessBoard = transition.getToBoard();
+                            fromRelativeLayout.removeAllViews();
+                            relativeLayout.removeAllViews();
+                            relativeLayout.addView(saveImageView);
+
+                            //moveLog.addMove(move);
+                        }
+                        sourceTile = null;
+                        humanMovedPiece = null;
+                    }
                 }
             });
         }

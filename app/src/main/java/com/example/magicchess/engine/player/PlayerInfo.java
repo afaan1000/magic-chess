@@ -168,6 +168,7 @@ public class PlayerInfo  {
             pieceAlignment.put(PieceType.ROOK, 56);
             pieceAlignment.put(PieceType.KNIGHT, 57);
             pieceAlignment.put(PieceType.BISHOP, 58);
+
             pieceAlignment.put(PieceType.QUEEN, 60);
             pieceAlignment.put(PieceType.KING, 59);
             pieceAlignment.put(PieceType.BISHOP, 61);
