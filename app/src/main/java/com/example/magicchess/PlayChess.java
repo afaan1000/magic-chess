@@ -226,7 +226,7 @@ public class PlayChess extends AppCompatActivity {
 
     }
 
-
+    // move piece on gui
     private void test(List<RelativeLayout> tiles, final PieceAlignment pieceAlignment){
 
         for(int i = 0; i<64; i++) {
